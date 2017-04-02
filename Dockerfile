@@ -17,5 +17,4 @@ RUN chmod +x /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/net_speeder
 
 # Configure container to run as an executable
-RUN nohup /usr/local/bin/net_speeder venet0 "ip" >/dev/null 2>&1 &
-RUN /usr/local/bin/ssserver "$@"
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
